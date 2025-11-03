@@ -1,0 +1,3 @@
+C:/Users/daasa/OneDrive/Documents/Projects/CppVault/build/CMakeFiles/CppVault.dir
+C:/Users/daasa/OneDrive/Documents/Projects/CppVault/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/daasa/OneDrive/Documents/Projects/CppVault/build/CMakeFiles/ZERO_CHECK.dir

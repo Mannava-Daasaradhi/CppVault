@@ -1,0 +1,96 @@
+# 🔒 C++ Password Vault
+
+A secure, local-first password manager written in C++.
+
+This application allows you to store and manage your passwords in a single, encrypted file on your computer. It uses a master password to encrypt your vault, so your data never leaves your machine and is never stored in plain text.
+
+
+## ✨ Features
+
+* **Local-First:** Your vault is a single `.db` file on your computer. No cloud, no servers.
+* **Strong Encryption:** Uses **libsodium** for modern, secure cryptography (Argon2id for key derivation and ChaCha20-Poly1305 for authenticated encryption).
+* **Full CRUD:** **C**reate, **R**ead, **U**pdate, and **D**elete password entries.
+* **Secure Password Generator:** Create strong, random passwords from within the app.
+* **Search/Filter:** Quickly find the entry you're looking for.
+* **Copy to Clipboard:** Securely copy usernames and passwords.
+
+## 🛠️ Tech Stack
+
+* **Language:** C++17
+* **Build System:** CMake
+* **Package Manager:** vcpkg
+* **Cryptography:** libsodium
+* **UI:** Dear ImGui (with GLFW & GLAD)
+* **Serialization:** nlohmann/json
+
+## 🚀 How to Build and Run (Windows)
+
+This guide assumes you are on Windows using Visual Studio 2019.
+
+### 1. Prerequisites
+
+You must have the following tools installed:
+
+1.  **Visual Studio 2019:** Make sure to install the **"Desktop development with C++"** workload.
+2.  **Git:** [Download from git-scm.com](https://git-scm.com/downloads)
+3.  **CMake:** [Download from cmake.org](https://cmake.org/download/) (During installation, make sure to select "Add CMake to the system PATH").
+
+### 2. Install Dependencies (vcpkg)
+
+We will use `vcpkg` to install all the required libraries.
+
+1.  Open a **Command Prompt** (or PowerShell).
+2.  Choose a location for your development tools (e.g., `C:\dev`) and clone vcpkg:
+    ```cmd
+    git clone [https://github.com/microsoft/vcpkg.git](https://github.com/microsoft/vcpkg.git) C:\dev\vcpkg
+    ```
+3.  Run the vcpkg bootstrap script:
+    ```cmd
+    C:\dev\vcpkg\bootstrap-vcpkg.bat
+    ```
+4.  Install the required libraries. This is the most important step. **This will take 10-20 minutes.**
+    *(This command installs the 64-bit Windows versions of all libraries)*
+    ```cmd
+    C:\dev\vcpkg\vcpkg.exe install libsodium:x64-windows nlohmann-json:x64-windows imgui[glfw-binding,opengl3-binding]:x64-windows glfw3:x64-windows glad:x64-windows
+    ```
+
+### 3. Clone This Project
+
+1.  Navigate to where you want to store the project (e.g., `Documents\Projects`):
+    ```cmd
+    cd %USERPROFILE%\Documents\Projects
+    ```
+2.  Clone the repository:
+    ```cmd
+    git clone [https://github.com/](https://github.com/)[your-github-username]/CppVault.git
+    cd CppVault
+    ```
+
+### 4. Configure and Build (Command Line)
+
+You **must** use the **"Developer Command Prompt for VS 2019"** for these steps. You can find it in your Start Menu.
+
+1.  In the "Developer Command Prompt for VS 2019," navigate to the project folder:
+    ```cmd
+    cd %USERPROFILE%\Documents\Projects\CppVault
+    ```
+2.  **Configure CMake:** Run the following command. This tells CMake to create a 64-bit Visual Studio 2019 project and points it to your vcpkg libraries.
+    ```cmd
+    cmake -B build -S . -G "Visual Studio 16 2019" -A x64 -DCMAKE_TOOLCHAIN_FILE=C:\dev\vcpkg\scripts\buildsystems\vcpkg.cmake
+    ```
+3.  **Build (Compile) the project:**
+    ```cmd
+    cmake --build build
+    ```
+
+### 5. Run the Application
+
+The final executable is now in your `build` folder.
+
+```cmd
+.\build\Debug\CppVault.exe
+```
+
+## 📜 License
+
+This project is licensed under the MIT License.

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\daasa\OneDrive\Documents\Projects\CppVault\build\CMakeFiles\8ec3d470033f09603a8c75657c413300\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A3B8026E-F509-3978-AD1D-BF95463F76A7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
